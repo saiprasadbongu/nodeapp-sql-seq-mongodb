@@ -29,7 +29,7 @@ const getEmployeeData = async () => {
 
 
 //post employee data
-
+//post employee data
 const postEmployee = async () => {
     try {
         console.log("inserting the details :")
