@@ -1,11 +1,9 @@
 const db = require('../models')
 
-// model
 const Review = db.reviews
 
-// functions
 
-//1. Add Review
+//Add Review
 
 const addReview = async (req, res) => {
 
@@ -22,7 +20,7 @@ const addReview = async (req, res) => {
 
 }
 
-// 2. Get  Reviews
+// Get all Reviews
 
 const getAllReviews = async (req, res) => {
 
@@ -31,7 +29,4 @@ const getAllReviews = async (req, res) => {
 
 }
 
-module.exports = {
-    addReview,
-    getAllReviews
-}
+module.exports = { addReview, getAllReviews}

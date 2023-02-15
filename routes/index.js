@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var service=require('../service/productController');
-var service=require('../service/mysql');
+var service=require('../service/employeeController');
 var cors = require('cors');
 const app = require('../app');
 router.use(cors())

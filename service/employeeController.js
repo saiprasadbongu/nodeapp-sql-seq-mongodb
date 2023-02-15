@@ -25,10 +25,6 @@ const getEmployeeData = async () => {
 
 }
 
-
-
-
-//post employee data
 //post employee data
 const postEmployee = async () => {
     try {

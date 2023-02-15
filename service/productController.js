@@ -22,8 +22,6 @@ const addProduct = async (req, res) => {
 
 }
 
-
-
 // get all products
 
 const getAllProducts = async (req, res) => {
@@ -95,17 +93,6 @@ const getProductReviews =  async (req, res) => {
     res.status(200).send(data)
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 module.exports = { addProduct,  getAllProducts, getOneProduct, updateProduct, deleteProduct, getPublishedProduct, getProductReviews}
 
