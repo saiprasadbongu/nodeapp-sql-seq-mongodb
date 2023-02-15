@@ -49,7 +49,7 @@ const postEmployee = async () => {
 }
 
 
-///update
+//update the employee data
 
 const updateEmployee = async () => {
     try {
@@ -60,12 +60,9 @@ const updateEmployee = async () => {
             connection.query(sqlQuery, (err, results) => {
 
                 if (err) {
-                    console.error(`Failed to retrieve product : ${err}`);
                     reject(err);
                 } else {
-                    let response = JSON.parse(JSON.stringify(results));
-                    console.log("postempdata function Latest usersdetails", response);
-                    resolve(response);
+                    resolve(results);
                 }
             });
         })
@@ -76,7 +73,7 @@ const updateEmployee = async () => {
 
 
 
-//innerjoin
+//innerjoin 
 
 const empInnerJoin = async () => {
     try {
@@ -87,12 +84,9 @@ const empInnerJoin = async () => {
             connection.query(sqlQuery, (err, results) => {
 
                 if (err) {
-                    console.error(`Failed to retrieve product : ${err}`);
                     reject(err);
                 } else {
-                    let response = JSON.parse(JSON.stringify(results));
-                    console.log("postempdata function Latest usersdetails", response);
-                    resolve(response);
+                    resolve(results);
                 }
             });
         })
@@ -113,12 +107,9 @@ const empLeftJoin = async () => {
             connection.query(sqlQuery, (err, results) => {
 
                 if (err) {
-                    console.error(`Failed to retrieve product : ${err}`);
                     reject(err);
                 } else {
-                    let response = JSON.parse(JSON.stringify(results));
-                    console.log("postempdata function Latest usersdetails", response);
-                    resolve(response);
+                    resolve(results);
                 }
             });
         })
@@ -137,12 +128,9 @@ const empRightJoin = async () => {
             connection.query(sqlQuery, (err, results) => {
 
                 if (err) {
-                    console.error(`Failed to retrieve product : ${err}`);
                     reject(err);
                 } else {
-                    let response = JSON.parse(JSON.stringify(results));
-                    console.log("postempdata function Latest usersdetails", response);
-                    resolve(response);
+                    resolve(results);
                 }
             });
         })
