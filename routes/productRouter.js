@@ -30,7 +30,9 @@ router.post('/addReview/:id', reviewController.addReview)
 // get product Reviews
 router.get('/getProductReviews/:id', productController.getProductReviews)
 
+//1 to 1
 
+router.get('/oneToOne', productController.oneToOne)
 
 
 // Products router

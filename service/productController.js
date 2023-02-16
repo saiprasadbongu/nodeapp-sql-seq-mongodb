@@ -1,8 +1,11 @@
 const db = require('../models/seq.js')
+const userModel = require('../models/userModel.js')
 
 // create  Model
 const Product = db.products
 const Review = db.reviews
+const User = db.users
+const Contact=db.contacts
 
 
 // create 
@@ -76,6 +79,36 @@ const getPublishedProduct = async (req, res) => {
 
 }
 
+//1 to 1 relation
+
+const oneToOne = async(req,res)=>{
+
+
+    // const data =await User.create({firstName:'rahul',lastName:'kumar'})
+    // if(data&data.id){
+    //     const data =await User.create({permanantAddress:'vizag',currentAddress:'hyderabad',user_id:data.id})
+    // }
+
+    const data =await User.findAll({
+        attributes:['firstName','lastName'],
+        include:[{
+            model:Contact,
+            as:'contactDetails',
+            attributes:['permanantAddress','currentAddress'],
+            where:{id:id}
+           
+        }
+
+        ]
+         
+    })
+    res.status(200).send(data)
+
+}
+
+
+
+
 //  connect one to many relation Product and Reviews
 
 const getProductReviews =  async (req, res) => {
@@ -94,7 +127,7 @@ const getProductReviews =  async (req, res) => {
 
 }
 
-module.exports = { addProduct,  getAllProducts, getOneProduct, updateProduct, deleteProduct, getPublishedProduct, getProductReviews}
+module.exports = { addProduct,  getAllProducts, getOneProduct, updateProduct, deleteProduct, getPublishedProduct, getProductReviews,oneToOne}
 
 
 
