@@ -14,9 +14,10 @@ module.exports = (sequelize, DataTypes) => {
         },
         published: {
             type: DataTypes.BOOLEAN
-        }
+        },
+        
     
-    })
+    },{ timestamps: false })
 
     return Product
 

@@ -1,4 +1,4 @@
-const db = require('../models')
+const db = require('../models/seq.js')
 
 const Review = db.reviews
 

@@ -3,16 +3,9 @@ const dbConfig = require('../connections/mysqldb.js');
 
 const {Sequelize, DataTypes} = require('sequelize');
 
-const sequelize = new Sequelize(
-    dbConfig.host,
-    dbConfig.port,
-    dbConfig.user, {
-        host: dbConfig.password,
-        dialect: dbConfig.dialect,
-      
-        operatorsAliases: false
-    }
-)
+
+const path = 'mysql://root:password@localhost:3306/empdetails';
+const sequelize = new Sequelize(path, { operatorsAliases: false });
 
 sequelize.authenticate()
 .then(() => {
@@ -20,7 +13,7 @@ sequelize.authenticate()
 })
 .catch(err => {
     console.log('Error'+ err)
-})
+});
 
 const db = {}
 
@@ -34,7 +27,6 @@ db.sequelize.sync({ force: false })
 .then(() => {
     console.log('yes re-sync done!')
 })
-
 
 
 // 1 to Many Relation

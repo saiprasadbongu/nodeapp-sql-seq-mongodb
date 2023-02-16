@@ -2,16 +2,19 @@
 const productController = require('../service/productController.js')
 const reviewController = require('../service/reviewController.js')
 
+
+// router
+const router = require('express').Router()
+
 router.get('/', function(req, res, next) {
     res.send('respond with a resource');
   });
   
-// router
-const router = require('express').Router()
+
 
 
 // use routers
-router.post('/addProduct', productController.upload , productController.addProduct)
+router.post('/addProduct', productController.addProduct)
 
 router.get('/allProducts', productController.getAllProducts)
 
