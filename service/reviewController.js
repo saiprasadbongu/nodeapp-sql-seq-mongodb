@@ -28,5 +28,4 @@ const getAllReviews = async (req, res) => {
     res.status(200).send(reviews)
 
 }
-
 module.exports = { addReview, getAllReviews}

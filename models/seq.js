@@ -41,11 +41,6 @@ db.users.hasOne(db.contacts,{foreignKey:'user_id',as:'contactDetails'})
 db.contacts.belongsTo(db.users)
 
 
-
-
-
-
-
 // 1 to Many Relation
 
 db.products.hasMany(db.reviews, {

@@ -27,13 +27,18 @@ router.get('/published', productController.getPublishedProduct)
 router.get('/allReviews', reviewController.getAllReviews)
 router.post('/addReview/:id', reviewController.addReview)
 
+
 // get product Reviews
 router.get('/getProductReviews/:id', productController.getProductReviews)
 
-//1 to 1
+
+// one-to-one relation
+
+router.post('/addUser', productController.addUser)
+
+router.post('/addContact/:id', productController.addContact)
 
 router.get('/oneToOne', productController.oneToOne)
-
 
 // Products router
 router.get('/:id', productController.getOneProduct)

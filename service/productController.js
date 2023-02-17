@@ -79,15 +79,38 @@ const getPublishedProduct = async (req, res) => {
 
 }
 
+
+//add user
+const addUser = async (req, res) => {
+
+    let info = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName  
+    }
+     const user = await User.create(info)
+    res.status(200).send(user)
+    console.log(user)
+
+}
+
+
+// add contact 
+const addContact = async (req, res) => {
+  const id = req.params.id
+ let data = {
+        permanantAddress: req.body.permanantAddress,
+        currentAddress: req.body.currentAddress,
+        user_id: id,
+    }
+
+    const contact = await Contact.create(data)
+    res.status(200).send(contact)
+
+}
+
 //1 to 1 relation
 
 const oneToOne = async(req,res)=>{
-
-
-    // const data =await User.create({firstName:'rahul',lastName:'kumar'})
-    // if(data&data.id){
-    //     const data =await User.create({permanantAddress:'vizag',currentAddress:'hyderabad',user_id:data.id})
-    // }
 
     const data =await User.findAll({
         attributes:['firstName','lastName'],
@@ -95,18 +118,11 @@ const oneToOne = async(req,res)=>{
             model:Contact,
             as:'contactDetails',
             attributes:['permanantAddress','currentAddress'],
-            where:{id:id}
-           
-        }
-
+            where:{id:id} }
         ]
-         
-    })
+         })
     res.status(200).send(data)
-
 }
-
-
 
 
 //  connect one to many relation Product and Reviews
@@ -124,10 +140,9 @@ const getProductReviews =  async (req, res) => {
     })
 
     res.status(200).send(data)
-
 }
 
-module.exports = { addProduct,  getAllProducts, getOneProduct, updateProduct, deleteProduct, getPublishedProduct, getProductReviews,oneToOne}
+module.exports = { addProduct,  getAllProducts, getOneProduct, updateProduct, deleteProduct, getPublishedProduct, getProductReviews,oneToOne,addUser,addContact}
 
 
 
