@@ -62,7 +62,6 @@ const updateProduct = async (req, res) => {
 const deleteProduct = async (req, res) => {
 
     let id = req.params.id
-    
     await Product.destroy({ where: { id: id }} )
 
     res.status(200).send('Product is deleted !')
@@ -74,9 +73,7 @@ const deleteProduct = async (req, res) => {
 const getPublishedProduct = async (req, res) => {
 
     const products =  await Product.findAll({ where: { published: true }})
-
     res.status(200).send(products)
-
 }
 
 
