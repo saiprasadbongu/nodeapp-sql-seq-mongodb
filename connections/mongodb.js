@@ -3,13 +3,13 @@ const connectionParams = {
     useNewUrlParser: true,
     useUnifiedTopology: true
 };
-// mongoose.set('strictQuery', true);
+mongoose.set('strictQuery', true);
 
-const uri = `mongodb+srv://saiprasad:saiprasad@cluster0.iyzvwvj.mongodb.net/?retryWrites=true&w=majority/saidata`;
+const uri = `mongodb+srv://saiprasad:saiprasad@cluster0.iyzvwvj.mongodb.net/?retryWrites=true&w=majority`;
 const connection = mongoose
     .connect(uri, connectionParams)
     .then(() => {
-        console.log("Connected to database");
+        console.log("Connected to database mongoDB");
 
     })
     .catch((err) => {

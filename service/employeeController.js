@@ -19,7 +19,7 @@ const getEmployeeData = async () => {
             });
         })
     } catch (err) {
-        console.log("Error while calling getuserdata function : ", err);
+        console.log("Error while calling getEmployeeData function : ", err);
 
     }
 
@@ -42,7 +42,7 @@ const postEmployee = async () => {
             });
         })
     } catch (err) {
-        console.log("Error while calling getuserdata function : ", err);
+        console.log("Error while calling postEmployee function : ", err);
 
     }
 
@@ -53,7 +53,7 @@ const postEmployee = async () => {
 
 const updateEmployee = async () => {
     try {
-        console.log("inserting the details :")
+        console.log("updating the details :")
 
         let sqlQuery = "UPDATE mcityemp set empid=IFNULL( ? ,empid), name=IFNULL( ? ,name), dept=IFNULL( ? ,dept), location=IFNULL( ? ,location)where Id=" + req.params.empid;
         return new Promise(async (resolve, reject) => {
@@ -67,7 +67,7 @@ const updateEmployee = async () => {
             });
         })
     } catch (err) {
-        console.log("Error while calling getuserdata function : ", err);
+        console.log("Error while calling updateEmployee function : ", err);
     }
 }
 
@@ -77,7 +77,7 @@ const updateEmployee = async () => {
 
 const empInnerJoin = async () => {
     try {
-        console.log("inserting the details :")
+        console.log("innerjoin the details :")
 
         let sqlQuery = "SELECT employee.EmpID,employee.EmpFname,employee.EmpLname,project.ProjectID,project.ProjectName FROM employee INNER JOIN Project ON employee.EmpID=project.EmpID";
         return new Promise(async (resolve, reject) => {
@@ -91,7 +91,7 @@ const empInnerJoin = async () => {
             });
         })
     } catch (err) {
-        console.log("Error while calling getuserdata function : ", err);
+        console.log("Error while calling empInnerJoin function : ", err);
     }
 }
 
@@ -100,7 +100,7 @@ const empInnerJoin = async () => {
 
 const empLeftJoin = async () => {
     try {
-        console.log("inserting the details :")
+        console.log("leftjoin the details :")
 
         let sqlQuery = "SELECT employee.EmpFname,employee.EmpLname,project.ProjectID,project.ProjectName FROM employee LEFT JOIN Project ON employee.EmpID=project.EmpID";
         return new Promise(async (resolve, reject) => {
@@ -114,14 +114,14 @@ const empLeftJoin = async () => {
             });
         })
     } catch (err) {
-        console.log("Error while calling getuserdata function : ", err);
+        console.log("Error while calling empLeftJoin function : ", err);
     }
 }
 
 
 const empRightJoin = async () => {
     try {
-        console.log("inserting the details :")
+        console.log("rightjoin the details :")
 
         let sqlQuery = "SELECT employee.EmpFname,employee.EmpLname,project.ProjectID,project.ProjectName FROM employee RIGHT JOIN Project ON employee.EmpID=project.EmpID";
         return new Promise(async (resolve, reject) => {
@@ -135,7 +135,7 @@ const empRightJoin = async () => {
             });
         })
     } catch (err) {
-        console.log("Error while calling getuserdata function : ", err);
+        console.log("Error while calling empRightJoin function : ", err);
     }
 }
 

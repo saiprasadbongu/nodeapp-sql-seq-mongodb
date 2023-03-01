@@ -1,5 +1,5 @@
 
-    const tutorials = require("../service/tutorialRouter.js");
+    const tutorials = require("../service/tutorial.controller.js");
   
     var router = require("express").Router();
   

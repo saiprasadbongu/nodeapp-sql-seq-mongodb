@@ -33,11 +33,11 @@ db.reviews = require('./reviewModel.js')(sequelize, DataTypes);
 db.sequelize.sync({ force: false })
 .then(() => {
     console.log('yes re-sync done!')
-})
+});
 
 // 1 to 1 Relation
 
-db.users.hasOne(db.contacts,{foreignKey:'user_id',as:'contactDetails'})
+db.users.hasOne(db.contacts,{foreignKey:'user_id',as:'contactDetails'});
 
 db.contacts.belongsTo(db.users)
 
