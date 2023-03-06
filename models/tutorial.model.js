@@ -5,7 +5,7 @@ module.exports = mongoose => {
         description: String,
         published: Boolean
       },
-      { timestamps: true }
+      { timestamps: false }
     );
   
     schema.method("toJSON", function() {

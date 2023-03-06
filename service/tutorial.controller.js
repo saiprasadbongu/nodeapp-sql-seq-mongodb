@@ -17,8 +17,7 @@ exports.create = (req, res) => {
   });
 
   // Save Tutorial in the database
-  tutorial
-    .save(tutorial)
+  tutorial.save(tutorial)
     .then(data => {
       res.send(data);
     })
